@@ -1,0 +1,38 @@
+#!/bin/bash
+
+mkdir /publico 
+chown root
+
+mkdir /adm 
+
+mkdir /ven
+
+mkdir /sec 
+
+groupadd GRP_ADM
+
+groupadd GRP_VEN
+
+groupadd GRP_SEC
+
+useradd 
+
+useradd carlos -m -s /bin/bash -p $(openssl passwd -crypt adm@2022) -G GRP_ADM
+useradd maria -m -s /bin/bash -p $(openssl passwd -crypt adm@2022) -G GRP_ADM
+useradd joao_ -m -s /bin/bash -p $(openssl passwd -crypt adm@2022) -G GRP_ADM
+
+useradd debora -m -s /bin/bash -p $(openssl passwd -crypt adm@2022) -G GRP_VEN
+useradd sebastiana -m -s /bin/bash -p $(openssl passwd -crypt adm@2022) -G GRP_VEN
+useradd roberto -m -s /bin/bash -p $(openssl passwd -crypt adm@2022) -G GRP_VEN
+
+useradd josefina -m -s /bin/bash -p $(openssl passwd -crypt adm@2022) -G GRP_SEC
+useradd amanda -m -s /bin/bash -p $(openssl passwd -crypt adm@2022) -G GRP_SEC
+useradd rogerio -m -s /bin/bash -p $(openssl passwd -crypt adm@2022) -G GRP_SEC
+
+chown root:GRP_ADM /adm
+chown root:GRP_ADM /ven
+chown root:GRP_ADM /sec
+
+chmod 777 /adm
+chmod 777 /ven
+chmod 777 /sec
